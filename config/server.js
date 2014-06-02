@@ -50,5 +50,11 @@ module.exports = {
       res.json(createCandidate(req.body));
     });
 
+    app.post("/candidates/:id", function(req, res) {
+      candidate = findCandidate(req.params.id);
+      _.extend(candidate, req.body);
+      res.json(candidate);
+    });
+
   }
 };
