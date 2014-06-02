@@ -8,7 +8,7 @@ describe('my angular app', function () {
     ptor = protractor.getInstance();
 
     beforeEach(function () {
-      ptor.get('/list-of-candidates');
+      ptor.get('/');
     });
 
     it('should show me a list of books', function() {

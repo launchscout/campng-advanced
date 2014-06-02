@@ -1,7 +1,5 @@
 angular.module("app").config(function($routeProvider, $locationProvider) {
 
-  $locationProvider.html5Mode(true);
-
   $routeProvider.when('/login', {
     templateUrl: 'login.html',
     controller: 'LoginController'
@@ -23,16 +21,16 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
     // }
   });
 
-  $routeProvider.when('/list-of-candidates', {
+  $routeProvider.when('/candidates', {
     templateUrl: 'candidates.html',
     controller: 'CandidatesController as ctrl'
   });
 
-  $routeProvider.when('/new-candidate', {
+  $routeProvider.when('/candidates/new', {
     templateUrl: 'new_candidate.html',
     controller: 'NewCandidateController as ctrl'
   });
 
-  $routeProvider.otherwise({ redirectTo: '/login' });
+  $routeProvider.otherwise({ redirectTo: '/candidates' });
 
 });

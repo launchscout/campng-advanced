@@ -19,6 +19,13 @@ module.exports = function(lineman) {
       ]
     },
 
+    css: {
+      vendor: [
+        "vendor/bower/bootstrap/dist/css/bootstrap.css",
+        "vendor/css/**/*.css",
+
+      ]
+    },
     less: {
       compile: {
         options: {
