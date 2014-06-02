@@ -23,6 +23,16 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
     // }
   });
 
+  $routeProvider.when('/list-of-candidates', {
+    templateUrl: 'candidates.html',
+    controller: 'CandidatesController as ctrl'
+  });
+
+  $routeProvider.when('/new-candidate', {
+    templateUrl: 'new_candidate.html',
+    controller: 'NewCandidateController as ctrl'
+  });
+
   $routeProvider.otherwise({ redirectTo: '/login' });
 
 });

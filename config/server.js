@@ -12,10 +12,22 @@
  *
  */
 
+var _ = require("underscore");
+
 var candidates = [
-  {name: "John Doe", email: "john.doe@example.com"},
-  {name: "Jane Doe", email: "jane.doe@example.com"},
+  {id: 1, name: "John Doe", email: "john.doe@example.com"},
+  {id: 2, name: "Jane Doe", email: "jane.doe@example.com"},
 ];
+
+function findCandidate(id) {
+  return _.findWhere(candidates, {id: Number(id)});
+}
+
+function createCandidate(candidate) {
+  candidate.id = candidates.length + 1;
+  candidates.push(candidate);
+  return candidate;
+}
 module.exports = {
   drawRoutes: function(app) {
     app.post('/login', function(req, res) {
@@ -30,8 +42,13 @@ module.exports = {
       res.json(candidates);
     });
 
-    app.post("/candidates", function(req, res) {
-      candidates.push(JSON.parse(res.body))
+    app.get('/candidates/:id', function (req, res) {
+      res.json(findCandidate(req.params.id));
     });
+
+    app.post("/candidates", function(req, res) {
+      res.json(createCandidate(req.body));
+    });
+
   }
 };
