@@ -2,7 +2,8 @@
   "name": "recruiting",
   "version": "0.0.1",
   "dependencies": {
-    "bootstrap": "latest",
     "markdown": "~0.5.0"
+    "bootstrap": "latest",
+    "raty": "latest"
   }
 }

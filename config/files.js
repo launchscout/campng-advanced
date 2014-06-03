@@ -12,7 +12,9 @@ module.exports = function(lineman) {
       vendor: [
         "vendor/js/angular.js",
         "vendor/bower/markdown/lib/markdown.js",
-        "vendor/js/**/*.js"
+        "vendor/js/**/*.js",
+        "vendor/bower/jquery/dist/jquery.js",
+        "vendor/bower/raty/lib/jquery.raty.js"
       ],
       app: [
         "app/js/app.js",
