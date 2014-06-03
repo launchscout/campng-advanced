@@ -14,8 +14,14 @@ angular.module("app").directive("starRating", function() {
         }
       });
       modelCtrl.$render = function() {
-        $(element).raty("score", this.$modelValue);
+        $(element).raty("score", this.$viewValue);
       };
+      modelCtrl.$formatters.push(function(modelValue) {
+        return modelValue / 20;
+      });
+      modelCtrl.$parsers.push(function(viewValue) {
+        return viewValue * 20;
+      });
     }
   };
 });
