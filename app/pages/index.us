@@ -53,8 +53,11 @@
     <div class="container-fluid">
       <div class="col-md-3" ng-controller="CandidatesController as ctrl">
         <ul class="list-group">
-          <li class="list-group-item" ng-repeat="candidate in ctrl.candidates">{{candidate.name}}</li>
+          <li class="list-group-item" ng-repeat="candidate in ctrl.candidates">
+            <a href="#/candidates/{{candidate.id}}">{{candidate.name}}</a>
+          </li>
         </ul>
+        <a href="#/candidates/new" class="btn btn-primary">New Candidate</a>
       </div>
       <div class="col-md-9">
         <div ng-view></div>
