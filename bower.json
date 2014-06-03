@@ -2,12 +2,13 @@
   "name": "recruiting",
   "version": "0.0.1",
   "dependencies": {
+    "markdown": "~0.5.0"
     "bootstrap": "latest",
     "angular-route": "~1.3.15",
     "angular-sanitize": "~1.3.15",
     "angular-resource": "~1.3.15",
-    "angular-messages": "~1.3.15",
-	"markdown": "~0.5.0"
+    "raty": "latest",
+    "angular-messages": "~1.3.15"
   },
   "devDependencies": {
     "angular-mocks": "~1.3.15"
