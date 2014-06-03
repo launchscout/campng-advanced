@@ -1,20 +1,21 @@
 angular.module("app").directive("starRating", function() {
   return {
+    require: "ngModel",
     scope: {
       "rating": "="
     },
-    link: function(scope, element, attrs) {
+    link: function(scope, element, attrs, modelCtrl) {
       $(element).raty({
         path: "/img",
         click: function(score, event) {
           scope.$apply(function() {
-            scope.rating = score;
+            modelCtrl.$setViewValue(score);
           });
         }
       });
-      scope.$watch("rating", function(rating) {
-        $(element).raty("score", rating);
-      });
+      modelCtrl.$render = function() {
+        $(element).raty("score", this.$modelValue);
+      };
     }
-  }
+  };
 });
