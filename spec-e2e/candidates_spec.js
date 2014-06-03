@@ -1,5 +1,10 @@
 describe('my angular app', function () {
+  var ptor;
+  ptor = protractor.getInstance();
+
   describe('visiting the list of candidates', function () {
+
+
     beforeEach(function () {
       browser.get('/');
     });
