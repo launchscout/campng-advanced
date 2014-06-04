@@ -1,4 +1,4 @@
-angular.module("app").controller("ShowCandidateController", function (Candidate, $routeParams) {
-  this.candidate = Candidate.get({id: $routeParams.id});
+angular.module("app").controller("ShowCandidateController", function (Candidate, $stateParams) {
+  this.candidate = Candidate.get({id: $stateParams.id});
 
 });

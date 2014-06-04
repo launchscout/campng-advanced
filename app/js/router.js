@@ -1,46 +1,30 @@
-angular.module("app").config(function($routeProvider, $locationProvider) {
+angular.module("app").config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
-  $routeProvider.when('/login', {
-    templateUrl: 'login.html',
-    controller: 'LoginController'
-  });
 
-  $routeProvider.when('/home', {
-    templateUrl: 'home.html',
-    controller: 'HomeController'
-  });
-
-  $routeProvider.when('/list-of-books', {
-    templateUrl: 'books.html',
-    controller: 'BooksController'
-    // uncomment if you want to see an example of a route that resolves a request prior to rendering
-    // resolve: {
-    //   books : function(BookService) {
-    //     return BookService.get();
-    //   }
-    // }
-  });
-
-  $routeProvider.when('/candidates', {
+  $stateProvider.state("candidates", {
+    url: '/candidates',
     templateUrl: 'candidates.html',
     controller: 'CandidatesController as ctrl'
   });
 
-  $routeProvider.when('/candidates/new', {
+  $stateProvider.state("newCandidate", {
+    url: '/candidates/new',
     templateUrl: 'new_candidate.html',
     controller: 'NewCandidateController as ctrl'
   });
 
-  $routeProvider.when('/candidates/:id', {
+  $stateProvider.state("showCandidate", {
+    url: '/candidates/:id',
     templateUrl: 'show_candidate.html',
     controller: 'ShowCandidateController as ctrl'
   });
 
-  $routeProvider.when('/candidates/:id/edit', {
+  $stateProvider.state("editCandidate", {
+    url: '/candidates/:id/edit',
     templateUrl: 'edit_candidate.html',
     controller: 'EditCandidateController as ctrl'
   });
 
-  $routeProvider.otherwise({ redirectTo: '/candidates' });
+  $urlRouterProvider.otherwise('/candidates');
 
 });
