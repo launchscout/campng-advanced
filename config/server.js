@@ -16,7 +16,10 @@ var _ = require("underscore");
 
 var candidates = [
   {id: 1, name: "John Doe", email: "john.doe@example.com", rating: 60},
-  {id: 2, name: "Jane Doe", email: "jane.doe@example.com"},
+  {id: 2, name: "Jane Doe", email: "jane.doe@example.com", comments: [
+    {title: "ok", body: "She was alright, but really nothing special"},
+    {title: "amazing", body: "Are you kidding? I was so impressed that I can't even stand it."},
+  ]},
 ];
 
 function findCandidate(id) {
