@@ -61,7 +61,7 @@
         <a href="#/candidates/new" class="btn btn-primary">New Candidate</a>
       </div>
       <div class="col-md-9">
-        <div ng-view></div>
+        <div ui-view></div>
       </div>
     </div>
 

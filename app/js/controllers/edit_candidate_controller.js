@@ -1,5 +1,5 @@
-angular.module("app").controller("EditCandidateController", function (Candidate, $location, $rootScope, $routeParams) {
-  this.candidate = Candidate.get({id: $routeParams.id});
+angular.module("app").controller("EditCandidateController", function (Candidate, $location, $rootScope, $stateParams) {
+  this.candidate = Candidate.get({id: $stateParams.id});
 
   this.save = function() {
     this.candidate.$save(function(savedCandidate) {
