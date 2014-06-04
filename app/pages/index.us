@@ -50,8 +50,9 @@
       </div>
     </div>
 
-    <div class="container-fluid">
-      <div class="col-md-3" ng-controller="CandidatesController as ctrl">
+    <div class="container-fluid" ng-controller="CandidatesController as ctrl">
+      <div show-message message="ctrl.message" close="ctrl.dismissMessage()"></div>
+      <div class="col-md-3">
         <ul class="list-group">
           <li class="list-group-item" ng-repeat="candidate in ctrl.candidates">
             <a href="#/candidates/{{candidate.id}}">{{candidate.name}}</a>
