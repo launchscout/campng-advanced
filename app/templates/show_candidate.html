@@ -8,6 +8,9 @@
 
 </dl>
 <ul>
-  <li ng-repeat="comment in ctrl.candidate.comments">{{comment.title}}</li>
+  <li ng-repeat="comment in ctrl.candidate.comments">
+    <a ui-sref=".showComment({commentIndex: $index})">{{comment.title}}</a>
+  </li>
 </ul>
+<div ui-view></div>
 <a ui-sref="editCandidate({id: ctrl.candidate.id})">Edit</a>

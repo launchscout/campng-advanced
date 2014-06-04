@@ -19,6 +19,12 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider, $locat
     controller: 'ShowCandidateController as ctrl'
   });
 
+  $stateProvider.state("showCandidate.showComment", {
+    url: '/comments/:commentIndex',
+    templateUrl: 'show_comment.html',
+    controller: 'ShowCommentController as ctrl'
+  });
+
   $stateProvider.state("editCandidate", {
     url: '/candidates/:id/edit',
     templateUrl: 'edit_candidate.html',
