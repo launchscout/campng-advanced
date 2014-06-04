@@ -1,5 +1,7 @@
-{{ctrl.candidate.name}}
-{{ctrl.candidate.rating}}
-<div star-rating ng-model="ctrl.candidate.rating"></div>
-
-<div hello-there message="foo"></div>
+<dl>
+  <dt>Name:</dt>
+  <dd>{{ctrl.candidate.name}}</dd>
+  <dt>Rating:</dt>
+  <dd>{{ctrl.candidate.rating}}</dd>
+</dl>
+<a href="#/candidates/{{ctrl.candidate.id}}/edit">Edit</a>
