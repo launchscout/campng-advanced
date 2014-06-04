@@ -4,4 +4,7 @@
   <dt>Rating:</dt>
   <dd>{{ctrl.candidate.rating}}</dd>
 </dl>
+<ul>
+  <li ng-repeat="comment in ctrl.candidate.comments">{{comment.title}}</li>
+</ul>
 <a ui-sref="editCandidate({id: ctrl.candidate.id})">Edit</a>
