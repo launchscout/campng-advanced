@@ -1,13 +1,20 @@
-angular.module("app").controller("CandidatesController", function (Candidate, $rootScope) {
+angular.module("app").controller("CandidatesController", function (Candidate, $scope) {
   this.candidates = Candidate.query();
+
+  this.dismissMessage = function() {
+    this.message = null;
+  }
+
   var that = this;
-  $rootScope.$on("newCandidate", function(event, newCandidate) {
+  $scope.$on("newCandidate", function(event, newCandidate) {
     that.candidates.push(newCandidate);
+    that.message = "Candidate created.";
   });
-  $rootScope.$on("savedCandidate", function(event, savedCandidate) {
+  $scope.$on("savedCandidate", function(event, savedCandidate) {
     candidate = _.findWhere(that.candidates, {id: savedCandidate.id})
     if (candidate) {
       _.extend(candidate, savedCandidate);
     }
+    that.message = "Candidate saved.";
   });
 });
