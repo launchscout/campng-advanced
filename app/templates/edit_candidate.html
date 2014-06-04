@@ -1,4 +1,4 @@
-<form role="form">
+<form role="form" name="editCandidateForm">
   <div class="form-group">
     <label for="name">Name</label>
     <input type="text" class="form-control" id="name" placeholder="Enter Name" ng-model="ctrl.candidate.name">
@@ -8,11 +8,17 @@
   <div markdown-editor text="ctrl.candidate.resume"></div>
 </div>
   <div class="form-group">
-    <label for="name">Salary</label>
+    <label for="salary">Salary</label>
     <dollar-input-group>
-      <input type="text" class="form-control" id="salart" ng-model="ctrl.candidate.salary">
+      <input type="text" class="form-control" id="salary" ng-model="ctrl.candidate.salary">
     </dollar-input-group>
   </div>
+  <div class="form-group" ng-class="{'has-error': editCandidateForm.ssn.$invalid}">
+    <label class='control-label' for="ssn">Social Security #</label>
+    <input type="text" class="form-control" id="ssn" name="ssn" ssn="true" ng-model="ctrl.candidate.ssn">
+    <span class="help-block" ng-show="editCandidateForm.ssn.$error.ssn">Invalid SSN</span>
+  </div>
+
   <div star-rating ng-model="ctrl.candidate.rating"></div>
   <button type="submit" class="btn btn-default" ng-click="ctrl.save()">Save</button>
 </form>
