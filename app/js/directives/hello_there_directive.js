@@ -4,5 +4,5 @@ angular.module("app").directive("helloThere", function() {
     scope: {
       "message": "@"
     }
-  }
+  };
 });
