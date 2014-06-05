@@ -25,6 +25,8 @@ describe('my angular app', function () {
       element(by.model("ctrl.candidate.name")).sendKeys("Fred");
       element(by.buttonText("Save")).click();
       expect(element(by.css("body")).getText()).toMatch(/Fred/);
+      var lastRow = element.all(by.repeater("candidate in ctrl.candidates")).last();
+      expect(lastRow.getText()).toMatch(/Fred/);
     });
   });
 });
