@@ -15,6 +15,7 @@ module.exports = function(lineman) {
         "vendor/bower/angular-resource/angular-resource.js",
         "vendor/bower/angular-messages/angular-messages.js",
         "vendor/bower/angular-mocks/angular-mocks.js",
+        "vendor/bower/markdown/lib/markdown.js",
         "vendor/js/**/*.js"
       ],
       app: [
