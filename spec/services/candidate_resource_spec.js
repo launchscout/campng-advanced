@@ -15,28 +15,26 @@ describe("Candidate service spec", function() {
   });
 
   describe("finding candidates", function() {
-    inject(function(Candidate) {
-      it("should find candidates", function() {
-        this.$httpBackend.expectGET('/candidates').respond([{name: "Bob"}]);
-        candidates = Candidate.query();
-        this.$httpBackend.flush();
-        expect(candidates.length).toEqual(1);
-      });
-    });
+
+    it("should find candidates", inject(function(Candidate) {
+      this.$httpBackend.expectGET('/candidates').respond([{name: "Bob"}]);
+      candidates = Candidate.query();
+      this.$httpBackend.flush();
+      expect(candidates.length).toEqual(1);
+    }));
+    
   });
 
   describe("creating new candidates", function() {
 
-    inject(function(Candidate) {
-      it("should find candidates", function() {
-        this.$httpBackend.expectPOST('/candidates').respond({name: "Bob", id: 1});
-        candidate = new Candidate();
-        candidate.name = "Bob";
-        candidate.$save();
-        this.$httpBackend.flush();
-        expect(candidate.id).toEqual(1);
-      });
-    });
+    it("should find candidates", inject(function(Candidate) {
+      this.$httpBackend.expectPOST('/candidates').respond({name: "Bob", id: 1});
+      candidate = new Candidate();
+      candidate.name = "Bob";
+      candidate.$save();
+      this.$httpBackend.flush();
+      expect(candidate.id).toEqual(1);
+    }));
 
   });
 });
