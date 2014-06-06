@@ -1,6 +1,6 @@
 angular.module("app")
-  .filter('markdown', function() {
+  .filter('markdown', function($sce) {
     return function(text) {
-      return markdown.toHTML(text);
+      return $sce.trustAsHtml(markdown.toHTML(text));
     }
   });
