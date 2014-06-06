@@ -13,7 +13,7 @@ describe("directive: markdown-editor", function() {
   }));
 
   it("sets the text in a textarea", function() {
-    expect(this.elem.find("textarea").html()).toBe("**foo**");
+    expect(this.elem.find("textarea").val()).toBe("**foo**");
   });
 
   it("renders the markdown", function() {
