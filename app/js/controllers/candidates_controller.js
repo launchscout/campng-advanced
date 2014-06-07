@@ -3,7 +3,7 @@ angular.module("app").controller("CandidatesController", function (Candidate, $s
 
   this.dismissMessage = function() {
     this.message = null;
-  }
+  };
 
   var that = this;
   $scope.$on("newCandidate", function(event, newCandidate) {
@@ -11,7 +11,7 @@ angular.module("app").controller("CandidatesController", function (Candidate, $s
     that.message = "Candidate created.";
   });
   $scope.$on("savedCandidate", function(event, savedCandidate) {
-    candidate = _.findWhere(that.candidates, {id: savedCandidate.id})
+    candidate = _.findWhere(that.candidates, {id: savedCandidate.id});
     if (candidate) {
       _.extend(candidate, savedCandidate);
     }
