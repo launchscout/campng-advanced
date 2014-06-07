@@ -31,6 +31,12 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider, $locat
     controller: 'EditCandidateController as ctrl'
   });
 
+  $stateProvider.state("login", {
+    url: '/login',
+    templateUrl: 'login.html',
+    controller: "LoginController as ctrl"
+  });
+
   $urlRouterProvider.otherwise('/candidates');
 
 });

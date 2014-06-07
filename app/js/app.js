@@ -1,4 +1,4 @@
-angular.module("app", ["ngResource", "ui.router"]).run(function($rootScope) {
+angular.module("app", ["ngResource", "ui.router"]).run(function($rootScope, $state, CurrentUser) {
   // adds some basic utilities to the $rootScope for debugging purposes
   $rootScope.log = function(thing) {
     console.log(thing);
@@ -7,4 +7,11 @@ angular.module("app", ["ngResource", "ui.router"]).run(function($rootScope) {
   $rootScope.alert = function(thing) {
     alert(thing);
   };
+
+  $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams) {
+    if (toState.name !== "login" && !CurrentUser.get()) {
+      event.preventDefault();
+      $state.go("login");
+    }
+  });
 });
