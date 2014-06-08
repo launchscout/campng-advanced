@@ -1,9 +1,20 @@
 var protractor = require('protractor');
 require('protractor/jasminewd');
 
+var MockModule = function() {
+  angular.module("MockModule", ["app"]).run(function (CurrentUser) {
+    CurrentUser.get = function() {
+      return {user: "bob"};
+    }
+  });
+}
 describe('my angular app', function () {
   var ptor;
   ptor = protractor.getInstance();
+
+  beforeEach(function() {
+    ptor.addMockModule("MockModule", MockModule);
+  });
 
   describe('visiting the list of candidates', function () {
 
