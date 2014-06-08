@@ -6,7 +6,8 @@
     "bootstrap": "latest",
     "raty": "latest",
     "angular-ui-router": "~0.2.10",
-    "angular-resource": "~1.2.16"
+    "angular-resource": "~1.2.16",
+    "angular-googleapi": "latest"
   },
   "devDependencies": {
     "angular-ui-router": "~0.2.10",
