@@ -18,7 +18,6 @@ describe('my angular app', function () {
 
   describe('visiting the list of candidates', function () {
 
-
     beforeEach(function () {
       ptor.get('/');
     });
