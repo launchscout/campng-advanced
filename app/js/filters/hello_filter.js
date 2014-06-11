@@ -1,5 +1,5 @@
-angular.module("app").filter("hello", function() {
-  return function(text) {
-    return "Hello " + text;
+angular.module("app").filter("hello", function($sce) {
+  return function(text, more) {
+    return $sce.trustAsHtml("<b>Hello</b>" + more + text);
   };
 });
