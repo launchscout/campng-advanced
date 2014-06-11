@@ -36,6 +36,11 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
     controller: 'ShowCandidateController as ctrl'
   });
 
+  $routeProvider.when('/candidates/:id/edit', {
+    templateUrl: 'edit_candidate.html',
+    controller: 'EditCandidateController as ctrl'
+  });
+
   $routeProvider.otherwise({ redirectTo: '/candidates' });
 
 });
