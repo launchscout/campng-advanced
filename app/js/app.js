@@ -9,6 +9,6 @@ angular.module("app", ["ngResource", "ui.router"]).run(function($rootScope, $sta
   };
 
   $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams) {
-    console.log("goin to " + toState);
+    console.log("goin to " + toState.name);
   });
 });
