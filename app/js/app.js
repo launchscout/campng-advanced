@@ -9,9 +9,6 @@ angular.module("app", ["ngResource", "ui.router"]).run(function($rootScope, $sta
   };
 
   $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams) {
-    if (toState.name !== "login" && !CurrentUser.get()) {
-      event.preventDefault();
-      $state.go("login");
-    }
+    console.log("goin to " + toState);
   });
 });
