@@ -8,7 +8,6 @@ describe("Candidate service spec", function() {
 
   beforeEach(inject(function(Candidate, $httpBackend) {
     this.$httpBackend = $httpBackend;
-    CandidateSvc = Candidate;
   }));
 
   afterEach(function() {
@@ -16,10 +15,14 @@ describe("Candidate service spec", function() {
     this.$httpBackend.verifyNoOutstandingExpectation();
   });
 
-  it("should find candidates", function() {
-    this.$httpBackend.expectGET('/candidates').respond([{name: "Bob"}]);
-    candidates = CandidateSvc.query();
-    this.$httpBackend.flush();
-    expect(candidates.length).toEqual(1);
+  describe("finding candidates", function() {
+
+    it("should find candidates", inject(function(Candidate) {
+      this.$httpBackend.expectGET('/candidates').respond([{name: "Bob"}]);
+      candidates = Candidate.query();
+      this.$httpBackend.flush();
+      expect(candidates.length).toEqual(1);
+    }));
+
   });
 });
